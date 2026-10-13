@@ -10,6 +10,7 @@ jobs:
           java-version: '25'
           distribution: 'microsoft'
       - run: unzip -q ./PurpurSound-source.zip
+      - run: sed -i 's#<purpur.version>.*</purpur.version>#<purpur.version>26.3.build.2635-experimental</purpur.version>#' PurpurSound/pom.xml
       - run: mvn -B package
         working-directory: PurpurSound
       - uses: actions/upload-artifact@v7
